@@ -87,10 +87,11 @@ document.querySelector("#submitbtn").addEventListener("click", (evt)=>{
                         }).then((response)=>{ return response.json() }).then((arg)=>{
                             if(arg.success){
                                 alert("We have received your request! you will be contacted shortly!");
-                                personName.value="";
-                                personEmail.value="";
-                                phone.value = "";
-                                subject.value = "";
+                                document.querySelector("#personName").value="";
+                                document.querySelector("#personEmail").value="";
+                                document.querySelector("#phone").value="";
+                                document.querySelector("#subject").value="";
+                                document.querySelector("#message").value="";
                                 message.value = "I want to avail your services! Please Contact me."
                             }
                         }).catch((err)=>{
