@@ -80,7 +80,10 @@ document.querySelector("#submitbtn").addEventListener("click", (evt)=>{
                         // API CALL
                         fetch("https://shwetankwebsite.herokuapp.com/mailapi/submitForm",{
                             method: "POST",
-                            body : JSON.stringify(data)
+                            body : JSON.stringify(data),
+                            headers : {
+                                "Content-type": "application/json"
+                            }
                         }).then((response)=>{ return response.json() }).then((arg)=>{
                             if(arg.success){
                                 alert("We have received your request! you will be contacted shortly!");
